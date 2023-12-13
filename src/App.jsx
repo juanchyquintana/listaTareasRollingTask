@@ -1,12 +1,17 @@
+import { Container } from 'react-bootstrap'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Footer from './components/Footer'
 
 function App() {
 
   return (
     <>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container className='my-5'>
+        <h1>Lista de Tareas</h1>
+      </Container>
+
+      <Footer />
     </>
   )
 }
