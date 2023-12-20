@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
+import ListaTarea from "./listaTarea";
 
 const Formulario = () => {
 
@@ -33,6 +34,10 @@ const Formulario = () => {
           </Button>
         </Form.Group>
       </Form>
+
+      <ListaTarea 
+        tarea={tarea}
+      />
     </>
   );
 };
