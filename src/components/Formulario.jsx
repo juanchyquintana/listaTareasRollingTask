@@ -1,43 +1,42 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import ListaTarea from "./listaTarea";
+import Error from "./Error";
 
 const Formulario = () => {
 
-  const [tarea, setTarea] = useState("");
+  const [ nombreTareas, setNombreTareas ] = useState("");
+  const [ error, setError ] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
 
+    if([nombreTareas].includes('')) {
+      setError(true);
+      return
+    }
+    setError(false)
   };
 
   return (
     <>
-      <Form>
+      <Form onSubmit={handleSubmit}>
+
+      {error && <Error>¡Introduce una tarea, por favor!</Error>}
+
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
           <Form.Control
             type="text"
             placeholder="Ej: cocinar, estudiar, programar, etc."
             minLength={3}
             maxLength={50}
-            value={tarea}
-            onChange={e => setTarea(e.target.value)}
+            value={nombreTareas}
+            onChange={(e) => setNombreTareas(e.target.value)}
           />
-          <Button
-            variant="success"
-            type="submit"
-            onClick={handleSubmit}
-            className="ms-2"
-          >
+          <Button variant="success" type="submit" className="ms-2">
             Agregar
           </Button>
         </Form.Group>
       </Form>
-
-      <ListaTarea 
-        tarea={tarea}
-      />
     </>
   );
 };
