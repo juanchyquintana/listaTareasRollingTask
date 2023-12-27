@@ -17,9 +17,14 @@ const Formulario = () => {
     }
     setError(false);
 
-    setTareas([...tareas, nombreTareas])
+    setTareas([...tareas, nombreTareas]);
 
-    setNombreTareas('');
+    setNombreTareas("");
+  };
+
+  const eliminarTarea = (nombreTarea) => {
+    const tareaActualizada = tareas.filter((tarea) => tarea !== nombreTarea);
+    setTareas(tareaActualizada);
   };
 
   return (
@@ -42,8 +47,9 @@ const Formulario = () => {
         </Form.Group>
       </Form>
 
-      <ListaTarea
+      <ListaTarea 
         tareas={tareas}
+        eliminarTarea={eliminarTarea}
       />
     </>
   );
