@@ -21,7 +21,7 @@ function App() {
         <ListaTarea />
       </Container>
 
-      <Container className="text-center">
+      <Container className="text-center my-5">
         <Image
           src={logoSimpsons}
           alt="logo simpsons"

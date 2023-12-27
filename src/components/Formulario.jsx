@@ -3,25 +3,28 @@ import { Button, Form } from "react-bootstrap";
 import Error from "./Error";
 
 const Formulario = () => {
-
-  const [ nombreTareas, setNombreTareas ] = useState("");
-  const [ error, setError ] = useState(false)
+  const [nombreTareas, setNombreTareas] = useState("");
+  const [tareas, setTareas] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if([nombreTareas].includes('')) {
+    if ([nombreTareas].includes("")) {
       setError(true);
-      return
+      return;
     }
-    setError(false)
+    setError(false);
+
+    setTareas([...tareas, nombreTareas])
+    
+    setNombreTareas('');
   };
 
   return (
     <>
       <Form onSubmit={handleSubmit}>
-
-      {error && <Error>¡Introduce una tarea, por favor!</Error>}
+        {error && <Error>¡Introduce una tarea, por favor!</Error>}
 
         <Form.Group className="mb-3 d-flex" controlId="formBasicEmail">
           <Form.Control
