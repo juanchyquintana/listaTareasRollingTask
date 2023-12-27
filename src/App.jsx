@@ -17,8 +17,6 @@ function App() {
         </h1>
 
         <Formulario />
-
-        <ListaTarea />
       </Container>
 
       <Container className="text-center my-5">

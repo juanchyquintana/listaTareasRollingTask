@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import Error from "./Error";
+import ListaTarea from "./listaTarea";
 
 const Formulario = () => {
   const [nombreTareas, setNombreTareas] = useState("");
@@ -17,7 +18,7 @@ const Formulario = () => {
     setError(false);
 
     setTareas([...tareas, nombreTareas])
-    
+
     setNombreTareas('');
   };
 
@@ -40,6 +41,10 @@ const Formulario = () => {
           </Button>
         </Form.Group>
       </Form>
+
+      <ListaTarea
+        tareas={tareas}
+      />
     </>
   );
 };
