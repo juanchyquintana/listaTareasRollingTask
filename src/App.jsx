@@ -1,12 +1,10 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Button, Container, Image } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Footer from "./components/Footer";
 import Formulario from "./components/Formulario";
-import ListaTarea from "./components/listaTarea";
+import Simpsons from "./components/Simpsons";
 
-import logoSimpsons from "./assets/logoLosSimpsons.png";
-import Frase from "./components/Frase";
 
 function App() {
   return (
@@ -20,21 +18,9 @@ function App() {
       </Container>
 
       <Container className="text-center my-5">
-        <Image
-          src={logoSimpsons}
-          alt="logo simpsons"
-          className="img-fluid w-25"
-        />
-
-        <Frase />
-
-        <Button
-          type="submit"
-          className="btn btn-warning text-white text-uppercase fw-bold w-50"
-        >
-          Obtener Frase
-        </Button>
+        <Simpsons />
       </Container>
+
       <Footer />
     </>
   );
